@@ -38,6 +38,7 @@ body, html {
     text-align: center;
     cursor: pointer;
     margin: 0 15px;
+    padding: 0 30px; /* 텍스트 좌우 여백 추가 */
     transition: color 0.3s ease;
     font-size: 1rem;
 }
@@ -50,6 +51,69 @@ body, html {
     height: 40px;
     width: auto;
     object-fit: contain;
+}
+
+/* 드롭다운 메뉴 기본 스타일 */
+.dropdown-menu {
+    display: block; /* JavaScript에서 숨길 때 제어하기 위해 기본값 설정 */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #33415c;
+    padding: 0; /* 처음에는 패딩을 제거 */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height: 0; /* 초기 높이 0 */
+    overflow: hidden; /* 내용이 넘치지 않도록 설정 */
+    transition: height 0.3s ease, padding 0.3s ease; /* 높이와 패딩에 애니메이션 추가 */
+}
+
+/* 드롭다운 메뉴 활성화 시 */
+.dropdown-menu.active {
+    height: auto; /* 콘텐츠 높이에 맞게 설정 */
+    padding: 10px 0; /* 내용에 여유를 주는 패딩 */
+}
+
+
+/* '제품' 스타일 (강조) */
+.nav-item.dropdown:nth-child(3) {
+    font-size: 1rem; /* 글자 크기 키움 */
+    padding: 0 50px; /* 좌우 여백 더 넓게 */
+    font-weight: bold; /* 텍스트 강조 */
+}
+
+/* 드롭다운 아이템 */
+.dropdown-menu .dropdown-item {
+    font-size: 0.9rem; /* 글자 크기 키움 */
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none; /* 밑줄 제거 */
+    display: block;
+    transition: background-color 0.3s ease;
+}
+ 
+/* 드롭다운 아이템 호버 효과 */
+.dropdown-menu .dropdown-item:hover {
+    background-color: #ffd700; /* 호버 시 색상 변경 */
+    color: #33415c;
+}
+
+/* 부모 요소 위치 설정 */
+.dropdown {
+    padding: 0 20px; /* 드롭다운 아이템의 좌우 공간 */
+    position: relative;
+    cursor: pointer;
+}
+/* 기본 링크 스타일 초기화 */
+.nav-item a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 요소의 텍스트 색상 상속 */
+}
+
+/* 호버 시 스타일 */
+.nav-item a:hover {
+    color: #ffd700; /* 호버 시 노란색 */
 }
 
 /* 메인 섹션 */
