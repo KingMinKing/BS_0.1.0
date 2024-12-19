@@ -75,4 +75,25 @@ body {
         margin: 10px 0;
         text-color: black;
     }
+    /* Dropdown Styling */
+    .dropdown {
+        position: relative;
+        text-color: black;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: var(--primary-color);
+        color: white;
+        text-color: black;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .dropdown-menu.active {
+        display: block;
+    }
 }
