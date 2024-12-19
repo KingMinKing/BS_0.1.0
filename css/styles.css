@@ -39,6 +39,7 @@ body {
 /* Dropdown Styling */
 .dropdown {
     position: relative;
+    text-color: black;
 }
 
 .dropdown-menu {
