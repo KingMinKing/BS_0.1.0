@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 네비게이션 바 동적 로드
+    // 네비게이션 바 로드
     const navbarHTML = `
         <header class="navbar">
             <div class="nav-item nav-logo">
@@ -7,20 +7,29 @@ document.addEventListener("DOMContentLoaded", () => {
                     <img src="assets/Logo.png" alt="보성케이블 로고">
                 </a>
             </div>
-            <nav>
-                <div class="nav-item dropdown">
-                    <button class="dropdown-toggle" aria-expanded="false">회사 소개</button>
-                    <div class="dropdown-menu">
-                        <a href="history.html" class="dropdown-item">이력</a>
-                        <a href="location.html" class="dropdown-item">오시는 길</a>
-                    </div>
+            <div class="nav-item dropdown">
+                <button class="dropdown-toggle" aria-expanded="false">회사 소개</button>
+                <div class="dropdown-menu">
+                    <a href="history.html" class="dropdown-item">이력</a>
+                    <a href="location.html" class="dropdown-item">오시는 길</a>
                 </div>
-                <div class="nav-item">
-                    <a href="process.html">유통 과정</a>
-                </div>
-            </nav>
+            </div>
         </header>
     `;
+    document.getElementById("navbar-container").innerHTML = navbarHTML;
+
+    // 드롭다운 메뉴 활성화
+    document.querySelectorAll(".dropdown-toggle").forEach((button) => {
+        button.addEventListener("click", () => {
+            const menu = button.nextElementSibling; // 바로 뒤의 .dropdown-menu 탐색
+            menu.classList.toggle("active");
+            const isActive = menu.classList.contains("active");
+            button.setAttribute("aria-expanded", isActive);
+        });
+    });
+});
+
+    
     document.getElementById("navbar-container").innerHTML = navbarHTML;
 
     // 푸터 동적 로드
