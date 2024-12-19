@@ -9,57 +9,28 @@
     <script src="js/scripts.js" defer></script>
 </head>
 <body>
-    <header id="navbar-container">Loading...</header>
+    <header id="navbar-container">
+        <div>Loading...</div>
+    </header>
 
     <main id="content">
-        <section class="main-content">
-            <div class="main-image">
-                <video class="main-video-content" autoplay muted loop>
-                    <source src="assets/20sec.mp4" type="video/mp4">
-                    <p>동영상을 지원하지 않는 브라우저입니다.</p>
-                </video>
-            </div>
-            <div class="quote-request">
-                <h2>견적 문의</h2>
-                <form>
-                    <div class="form-row">
-                        <label for="name">성 명:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-row">
-                        <label for="contact">연락처:</label>
-                        <input type="text" id="contact" name="contact" required>
-                    </div>
-                    <div class="form-row">
-                        <label for="affiliation">소 속:</label>
-                        <input type="text" id="affiliation" name="affiliation">
-                    </div>
-                    <div class="form-row">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-row">
-                        <label for="message">문의 내용:</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit">제 출</button>
-                </form>
-            </div>
-        </section>
+        <!-- 메인 콘텐츠 -->
     </main>
 
-    <footer id="footer-container">Loading...</footer>
+    <footer id="footer-container">
+        <div>Loading...</div>
+    </footer>
 
     <script>
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => document.getElementById('navbar-container').innerHTML = data)
-            .catch(() => document.getElementById('navbar-container').innerHTML = "Navbar failed to load.");
+            .catch(() => document.getElementById('navbar-container').innerHTML = "<p>Navbar failed to load.</p>");
 
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer-container').innerHTML = data)
-            .catch(() => document.getElementById('footer-container').innerHTML = "Footer failed to load.");
+            .catch(() => document.getElementById('footer-container').innerHTML = "<p>Footer failed to load.</p>");
     </script>
 </body>
 </html>
