@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-color: black;
     padding: 10px 20px;
     background-color: var(--primary-color);
     color: black;
