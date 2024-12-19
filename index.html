@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,104 +7,59 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans/css/SpoqaHanSansNeo.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
-    <script src="js/navbar.js" defer></script>
-
 </head>
-
 <body>
-    <div class="container">
-            <!-- 네비게이션 바 로드 -->
-        <div class="navbar-container"></div>
-    
-        <!-- 메인 이미지 및 견적 문의 -->
-         <main id="content">
-            <section class="main-content">
-                <div class="main-image">
-                    <video class="main-video-content" autoplay muted>
-                        <source src="assets/20sec.mp4" type="video/mp4">
-                        동영상을 지원하지 않는 브라우저입니다.
-                    </video>
-                </div>
-                
-                <div class="quote-request">
-                    <h2>견적 문의</h2>
-                    <form>
-                        <div class="form-row">
-                            <label for="name">성 명:</label>
-                            <input type="text" id="name" name="name">
-                        </div>
-                        <div class="form-row">
-                            <label for="contact">연락처:</label>
-                            <input type="text" id="contact" name="contact">
-                        </div>
-                        <div class="form-row">
-                            <label for="affiliation">소  속:</label>
-                            <input type="text" id="affiliation" name="affiliation">
-                        </div>
-                        <div class="form-row">
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div class="form-row">
-                            <label for="message">문의 내용:</label>
-                            <textarea id="message" name="message"></textarea>
-                        </div>
-                        <button type="submit">제 출</button>
-                    </form>
-                </div>
-            </section>
-    
-         </main>
+    <header id="navbar-container">Loading...</header>
 
-        <!-- 공지사항, 문의, 고객센터 -->
-        <section class="info-section">
-            <div class="info-block">
-                <h3>공지사항</h3>
-                <ul>
-                    <li>공지사항 제목 1</li>
-                    <li>공지사항 제목 2</li>
-                    <li>공지사항 제목 3</li>
-                    <li>공지사항 제목 4</li>
-                </ul>
+    <main id="content">
+        <section class="main-content">
+            <div class="main-image">
+                <video class="main-video-content" autoplay muted loop>
+                    <source src="assets/20sec.mp4" type="video/mp4">
+                    <p>동영상을 지원하지 않는 브라우저입니다.</p>
+                </video>
             </div>
-            <div class="divider"></div>
-            <div class="info-block">
-                <h3>문의</h3>
-                <ul>
-                    <li>문의 제목 1</li>
-                    <li>문의 제목 2</li>
-                    <li>문의 제목 3</li>
-                    <li>문의 제목 4</li>
-                </ul>
-            </div>
-            <div class="divider"></div>
-            <div class="info-block">
-                <h3>고객센터</h3>
-                <h4>031-234-5678</h4>
-                <h5>평일 09:00~18:00 (점심 12:00~13:00)</h5>
-                <h5>토,일,공휴일 휴무</h5>
+            <div class="quote-request">
+                <h2>견적 문의</h2>
+                <form>
+                    <div class="form-row">
+                        <label for="name">성 명:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="contact">연락처:</label>
+                        <input type="text" id="contact" name="contact" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="affiliation">소 속:</label>
+                        <input type="text" id="affiliation" name="affiliation">
+                    </div>
+                    <div class="form-row">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="message">문의 내용:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">제 출</button>
+                </form>
             </div>
         </section>
+    </main>
 
-        <!-- 주요 거래처 -->
-        <section class="partners">
-            <h3>주요 거래처</h3>
-            <div class="image-grid">
-                <div class="partner-image">이미지 3</div>
-                <div class="partner-image">이미지 4</div>
-                <div class="partner-image">이미지 5</div>
-                <div class="partner-image">이미지 6</div>
-                <div class="partner-image">이미지 7</div>
-                <div class="partner-image">이미지 8</div>
-                <div class="partner-image">이미지 9</div>
-            </div>
-        </section>
-        <!-- 푸터 -->
-        <footer class="footer">
-            <p>사업자 등록번호: 000-00-00000</p>
-            <p>본사: 경기도 평택시 오성면 오성북로 50</p>
-            <p>E-mail: abcd@gmail.com | 쇼핑몰: https://abcdkep.com  |  [개인정보처리방침]</p>
-        </footer>
-    </div>
+    <footer id="footer-container">Loading...</footer>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar-container').innerHTML = data)
+            .catch(() => document.getElementById('navbar-container').innerHTML = "Navbar failed to load.");
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(() => document.getElementById('footer-container').innerHTML = "Footer failed to load.");
+    </script>
 </body>
 </html>
