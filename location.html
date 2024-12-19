@@ -1,31 +1,43 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>보성케이블 오시는길</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans/css/SpoqaHanSansNeo.css">
-    <link rel="stylesheet" href="css/history.css">
+    <meta name="description" content="보성케이블 오시는 길 페이지입니다. 본사 위치와 연락처를 확인하세요.">
+    <title>보성케이블 오시는 길</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/scripts.js" defer></script>
     <script src="js/navbar.js" defer></script>
-
 </head>
 <body>
     <div class="container">
-        <!-- 네비게이션 바 로드 -->
-        <div class="navbar-container"></div>
+        <!-- 네비게이션 바 -->
+        <header id="navbar-container"></header>
 
         <!-- 메인 콘텐츠 -->
-        <main id="content">
-            <!-- Mobile Dynamic Map ・ Web Dynamic Map -->
-             <div> 네이버 Mobile Dynamic Map・Web Dynamic Map : API 가져오면 네이버 지도 사용 가능함. 600만회 사용까지 무료</div>
-             <div> +텍스트로 설명</div>
+        <main>
+            <section>
+                <h1>본사 위치</h1>
+                <div id="map" style="width: 100%; height: 400px;"></div>
+                <script>
+                    function initMap() {
+                        const location = { lat: 37.123456, lng: 127.654321 }; // 예시 좌표
+                        const map = new google.maps.Map(document.getElementById("map"), {
+                            zoom: 15,
+                            center: location,
+                        });
+                        new google.maps.Marker({
+                            position: location,
+                            map: map,
+                            title: "보성케이블 본사",
+                        });
+                    }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+            </section>
         </main>
 
-        <!-- 푸터 로드 -->
-        <div class="footer-container"></div>
+        <!-- 푸터 -->
+        <footer id="footer-container"></footer>
     </div>
 </body>
 </html>
