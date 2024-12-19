@@ -8,36 +8,13 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3 {
-    font-family: 'Spoqa Han Sans Neo', sans-serif;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-button[type="submit"] {
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: var(--primary-color);
-    transform: scale(1.05);
-}
-
-/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: var(--primary-color);
-    color: black;
+    color: white;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -45,8 +22,7 @@ button[type="submit"]:hover {
 }
 
 .navbar a {
-    color: black;
-    text-color: black ;
+    color: white;
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
@@ -57,7 +33,11 @@ button[type="submit"]:hover {
     color: var(--accent-color);
 }
 
-/* Hide dropdown menu by default */
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+}
+
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -69,14 +49,8 @@ button[type="submit"]:hover {
     z-index: 1000;
 }
 
-/* Show dropdown menu when active */
 .dropdown-menu.active {
     display: block;
-}
-
-/* Adjust positioning for dropdown menus */
-.dropdown {
-    position: relative;
 }
 
 /* Responsive Styles */
