@@ -1,4 +1,9 @@
-/* General Styles */
+:root {
+    --light-bg: #f8f9fa;
+    --primary-color: #33415c;
+    --text-color: #000000;
+}
+
 body {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
     background-color: var(--light-bg);
@@ -6,17 +11,15 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    text-color: black;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-color: black;
     padding: 10px 20px;
     background-color: var(--primary-color);
-    color: black;
+    color: var(--text-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -24,9 +27,8 @@ body {
 }
 
 .navbar a {
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
-    text-color: black;
     margin: 0 15px;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -36,10 +38,8 @@ body {
     color: yellow;
 }
 
-/* Dropdown Styling */
 .dropdown {
     position: relative;
-    text-color: black;
 }
 
 .dropdown-menu {
@@ -47,7 +47,6 @@ body {
     position: absolute;
     background-color: var(--primary-color);
     color: white;
-    text-color: black;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -55,7 +54,7 @@ body {
 }
 
 .dropdown-menu.active {
-    display: block;
+    display: block !important;
 }
 
 /* Responsive Styles */
@@ -67,33 +66,16 @@ body {
     .nav-menu {
         width: 100%;
         text-align: center;
-        text-color: black;
     }
 
     .nav-menu .nav-item {
         display: block;
         margin: 10px 0;
-        text-color: black;
-    }
-    /* Dropdown Styling */
-    .dropdown {
-        position: relative;
-        text-color: black;
     }
 
     .dropdown-menu {
-        display: none;
-        position: absolute;
-        background-color: var(--primary-color);
-        color: white;
-        text-color: black;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-    }
-
-    .dropdown-menu.active {
-        display: block;
+        position: static;
+        width: 100%;
     }
 }
+
