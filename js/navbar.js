@@ -1,4 +1,3 @@
-// Add click functionality for dropdown menus
 document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.querySelectorAll('.dropdown');
 
