@@ -1,38 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="보성케이블 공식 웹사이트입니다. UL 인증 전선 및 자동차 전선을 포함한 다양한 제품 정보를 확인하세요.">
     <title>보성케이블에 오신걸 환영합니다</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans/css/SpoqaHanSansNeo.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/scripts.js" defer></script>
     <script src="js/navbar.js" defer></script>
-
 </head>
 <body>
-    <header id="navbar-container">
-        <div>Loading...</div>
-    </header>
+    <div class="container">
+        <!-- 네비게이션 바 -->
+        <header id="navbar-container"></header>
 
-    <main id="content">
-        <!-- 메인 콘텐츠 -->
-    </main>
+        <!-- 메인 이미지 및 견적 문의 -->
+        <main id="content">
+            <section class="main-content">
+                <div class="main-image">
+                    <video class="main-video-content" autoplay muted loop>
+                        <source src="assets/20sec.mp4" type="video/mp4">
+                        브라우저가 동영상을 지원하지 않습니다.
+                    </video>
+                </div>
+                <div class="quote-request">
+                    <h2>견적 문의</h2>
+                    <form>
+                        <div class="form-row">
+                            <label for="name">성 명:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="contact">연락처:</label>
+                            <input type="text" id="contact" name="contact" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="message">문의 내용:</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit">제출</button>
+                    </form>
+                </div>
+            </section>
+        </main>
 
-    <footer id="footer-container">
-        <div>Loading...</div>
-    </footer>
+        <!-- 주요 거래처 -->
+        <section class="partners">
+            <h3>주요 거래처</h3>
+            <div class="image-grid">
+                <div class="partner-image" aria-label="파트너 1">이미지 1</div>
+                <div class="partner-image" aria-label="파트너 2">이미지 2</div>
+                <!-- 더 많은 이미지를 추가 가능 -->
+            </div>
+        </section>
 
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('navbar-container').innerHTML = data)
-            .catch(() => document.getElementById('navbar-container').innerHTML = "<p>Navbar failed to load.</p>");
-
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('footer-container').innerHTML = data)
-            .catch(() => document.getElementById('footer-container').innerHTML = "<p>Footer failed to load.</p>");
-    </script>
+        <!-- 푸터 -->
+        <footer id="footer-container"></footer>
+    </div>
 </body>
 </html>
