@@ -33,7 +33,7 @@ body {
 }
 
 .navbar a:hover {
-    color: var(--accent-color);
+    color: yellow;
 }
 
 /* Dropdown Styling */
