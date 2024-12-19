@@ -15,7 +15,7 @@ body {
     align-items: center;
     padding: 10px 20px;
     background-color: var(--primary-color);
-    color: white;
+    color: black;
     position: sticky;
     top: 0;
     z-index: 1000;
