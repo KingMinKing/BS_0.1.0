@@ -1,28 +1,16 @@
 <header class="navbar" role="navigation">
-    <style>
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #003366;
-            color: white;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        .navbar a:hover {
-            color: #ffcc00;
-        }
-    </style>
+    <!-- Import necessary styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Navbar Logo -->
     <div class="nav-item nav-logo">
         <a href="index.html">
             <img src="assets/Logo.png" alt="보성케이블 로고" class="nav-logo">
         </a>
     </div>
+
+    <!-- Navigation Menu -->
     <nav class="nav-menu">
         <div class="nav-item dropdown">
             회사 소개
@@ -50,4 +38,7 @@
             </div>
         </div>
     </nav>
+
+    <!-- Import Dropdown JavaScript -->
+    <script src="js/navbar.js" defer></script>
 </header>
