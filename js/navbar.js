@@ -1,11 +1,3 @@
-document.querySelectorAll(".dropdown-toggle").forEach((button) => {
-    button.addEventListener("click", () => {
-        const menu = button.nextElementSibling;
-        menu.classList.toggle("active");
-        button.setAttribute("aria-expanded", menu.classList.contains("active"));
-    });
-});
-
 /*Motion 및 사라지는것*/
 document.addEventListener("DOMContentLoaded", () => {
     // 
