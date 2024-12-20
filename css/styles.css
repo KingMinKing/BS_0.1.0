@@ -51,10 +51,26 @@ body {
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+/* 
+   기존 dropdown-menu의 표시/숨김 방식(display:none -> display:block)을 
+   transition 가능한 속성(opacity, transform)으로 변경.
+   그리고 pointer-events를 활용해 active 상태가 아닐 때 클릭 불가능하게 처리.
+
+   - 초기 상태: 숨김(투명, 위로 올라간 상태)
+   - active 상태: 불투명, 제자리에 표시
+   transition으로 부드러운 모션 부여
+*/
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* 숨김 상태에서 클릭 불가 */
+
 }
 
 .dropdown-menu.active {
-    display: block !important;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; /* 표시 상태에서 클릭 가능 */
 }
 
 /* Responsive Styles */
