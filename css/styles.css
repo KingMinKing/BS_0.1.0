@@ -2,6 +2,11 @@
     --light-bg: #f8f9fa;
     --primary-color: #33415c;
     --text-color: #000000;
+    /* 폰트 크기, 굵기를 전역으로統一하기 위해 변경: */
+    --base-font-size: 16px;
+    --base-font-weight: 400;
+    --navbar-bg: #ffffff; /* 네비게이션 바 배경을 흰색으로 */
+    --navbar-text-color: #000000; /* 네비게이션 바 텍스트 검은색 */
 }
 
 body {
@@ -11,6 +16,8 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    font-size: var(--base-font-size);
+    font-weight: var(--base-font-weight);
 }
 
 .navbar {
@@ -18,26 +25,47 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text-color);
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+/* 로고 크기 조정: 로고 이미지 높이를 글자 크기와 맞추기 */
+.navbar .nav-logo img {
+    height: 1em; /* 글자 높이와 유사한 크기로 설정 */
+    vertical-align: middle;
+}
 
-.navbar a {
-    color: var(--text-color);
+.navbar a,
+.navbar button,
+.dropdown-menu .dropdown-item {
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    font-size: var(--base-font-size);
+    font-weight: var(--base-font-weight);
+    color: var(--navbar-text-color);
     text-decoration: none;
     margin: 0 15px;
-    font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.navbar a:hover {
-    color: yellow;
+/* 호버 시 색상 변경 */
+.navbar a:hover,
+.navbar button:hover,
+.dropdown-menu .dropdown-item:hover {
+    color: #555; /* 살짝 진한 회색으로 변경 */
 }
 
+/* Text가 차지하는 가로 길이에 minimum 설정: nav-item에 min-width 지정 */
+.nav-item, 
+.dropdown-toggle,
+.dropdown-item {
+    display: inline-block;
+    min-width: 80px; /* 예: 최소 80px의 가로 길이 확보 */
+    text-align: center;
+}
+    
 .dropdown {
     position: relative;
 }
