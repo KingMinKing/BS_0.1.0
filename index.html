@@ -1,9 +1,10 @@
+<!-- index.html (정적 포함 예시) -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="보성케이블 공식 웹사이트입니다. UL 인증 전선 및 자동차 전선을 포함한 다양한 제품 정보를 확인하세요.">
+    <meta name="description" content="보성케이블 공식 웹사이트입니다.">
     <title>보성케이블에 오신걸 환영합니다</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans/css/SpoqaHanSansNeo.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -11,41 +12,43 @@
 </head>
 <body>
     <div class="container">
-        <!-- 네비게이션 바 -->
-        <header id="navbar-container"></header>
+        <!-- 네비게이션 바: navbar.html 내용을 직접 삽입 -->
+        <header class="navbar">
+            <div class="nav-item nav-logo">
+                <a href="index.html" aria-label="홈으로 이동">
+                    <img src="assets/Logo.png" alt="보성케이블 로고" class="nav-logo">
+                </a>
+            </div>
+            <div class="nav-item dropdown" role="menu" aria-haspopup="true">
+                <button class="dropdown-toggle" aria-expanded="false">회사 소개</button>
+                <div class="dropdown-menu" aria-label="회사 소개">
+                    <a href="history.html" class="dropdown-item">이력</a>
+                    <a href="location.html" class="dropdown-item">오시는 길</a>
+                    <a href="view.html" class="dropdown-item">회사 전경</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown" role="menu" aria-haspopup="true">
+                <button class="dropdown-toggle" aria-expanded="false">제품</button>
+                <div class="dropdown-menu" aria-label="제품 메뉴">
+                    <a href="prod_ul.html" class="dropdown-item">UL 인증 전선</a>
+                    <a href="prod_auto.html" class="dropdown-item">자동차 전선</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="process.html">유통 과정</a>
+            </div>
+            <div class="nav-item dropdown" role="menu" aria-haspopup="true">
+                <button class="dropdown-toggle" aria-expanded="false">고객센터</button>
+                <div class="dropdown-menu" aria-label="고객센터 메뉴">
+                    <a href="voc.html" class="dropdown-item">문의처</a>
+                    <a href="voc-board.html" class="dropdown-item">게시판</a>
+                </div>
+            </div>
+        </header>
 
-        <!-- 메인 이미지 및 견적 문의 -->
+        <!-- 메인 콘텐츠 -->
         <main id="content">
-            <section class="main-content">
-                <div class="main-image">
-                    <video class="main-video-content" autoplay muted loop>
-                        <source src="assets/20sec.mp4" type="video/mp4">
-                        브라우저가 동영상을 지원하지 않습니다.
-                    </video>
-                </div>
-                <div class="quote-request">
-                    <h2>견적 문의</h2>
-                    <form>
-                        <div class="form-row">
-                            <label for="name">성 명:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-row">
-                            <label for="contact">연락처:</label>
-                            <input type="text" id="contact" name="contact" required>
-                        </div>
-                        <div class="form-row">
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-row">
-                            <label for="message">문의 내용:</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit">제출</button>
-                    </form>
-                </div>
-            </section>
+            <!-- 기존 content 부분 그대로 -->
         </main>
 
         <!-- 주요 거래처 -->
@@ -54,12 +57,26 @@
             <div class="image-grid">
                 <div class="partner-image" aria-label="파트너 1">이미지 1</div>
                 <div class="partner-image" aria-label="파트너 2">이미지 2</div>
-                <!-- 더 많은 이미지를 추가 가능 -->
             </div>
         </section>
 
-        <!-- 푸터 -->
-        <footer id="footer-container"></footer>
+        <!-- 푸터: footer.html 내용을 직접 삽입 -->
+        <footer class="footer">
+            <section class="partners">
+                <h3>주요 거래처</h3>
+                <div class="image-grid">
+                    <div class="partner-image" aria-label="파트너 3">이미지 3</div>
+                    <div class="partner-image" aria-label="파트너 4">이미지 4</div>
+                </div>
+            </section>
+            <address>
+                <p>사업자 등록번호: 000-00-00000</p>
+                <p>본사: 경기도 평택시 오성면 오성북로 50</p>
+                <p>이메일: <a href="mailto:abcd@gmail.com">abcd@gmail.com</a></p>
+                <p>쇼핑몰: <a href="https://abcdkep.com" aria-label="쇼핑몰 링크">abcdkep.com</a></p>
+                <p><a href="privacy-policy.html">[개인정보처리방침]</a></p>
+            </address>
+        </footer>
     </div>
 </body>
 </html>
