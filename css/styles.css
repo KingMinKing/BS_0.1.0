@@ -43,7 +43,6 @@ body {
 }
 
 .dropdown-menu {
-    display: none;
     position: absolute;
     background-color: var(--primary-color);
     color: white;
